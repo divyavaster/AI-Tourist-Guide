@@ -1,0 +1,2586 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>AI Tourist Guide - Bagalkote</title>
+
+
+<style>
+
+/* =========================
+   BASIC
+========================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Arial, Helvetica, sans-serif;
+    background:#f7f0e6;
+    color:#2d1b12;
+}
+
+
+/* =========================
+   NAVBAR
+========================= */
+
+.navbar{
+    background:#21130c;
+    color:white;
+
+    padding:18px 7%;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    position:sticky;
+    top:0;
+
+    z-index:1000;
+}
+
+.logo{
+    font-size:25px;
+    font-weight:bold;
+    color:#e7bd72;
+}
+
+.nav-links{
+    display:flex;
+    gap:25px;
+}
+
+.nav-links a{
+    color:white;
+    text-decoration:none;
+    font-size:16px;
+}
+
+.nav-links a:hover{
+    color:#e7bd72;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero{
+
+    min-height:78vh;
+
+    background:
+    linear-gradient(
+        rgba(25,14,8,.55),
+        rgba(25,14,8,.72)
+    ),
+
+    url("https://cdn.s3waas.gov.in/s3a1d33d0dfec820b41b54430b50e96b5c/uploads/bfi_thumb/2018072842-1-rssv6h2c9rk9o1851rcm3pxsygd8lq2hcg21avyl56.jpg")
+    center/cover;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    text-align:center;
+
+    color:white;
+
+    padding:40px;
+}
+
+.hero-content{
+    max-width:900px;
+}
+
+.hero h1{
+    font-size:65px;
+    margin-bottom:20px;
+}
+
+.hero p{
+    font-size:22px;
+    line-height:1.7;
+}
+
+.hero-btn{
+    margin-top:30px;
+
+    padding:15px 32px;
+
+    border:none;
+    border-radius:30px;
+
+    background:#d6a653;
+    color:#24150e;
+
+    font-size:17px;
+    font-weight:bold;
+
+    cursor:pointer;
+}
+
+
+/* =========================
+   INTRO
+========================= */
+
+.intro{
+    padding:75px 8%;
+    text-align:center;
+}
+
+.intro h2{
+    font-size:42px;
+    color:#63391f;
+    margin-bottom:20px;
+}
+
+.intro p{
+    max-width:900px;
+    margin:auto;
+
+    font-size:18px;
+    line-height:1.9;
+}
+
+
+/* =========================
+   MAIN PLACES
+========================= */
+
+.places-section{
+    padding:30px 7% 80px;
+}
+
+.section-title{
+    text-align:center;
+
+    font-size:44px;
+
+    color:#63391f;
+
+    margin-bottom:50px;
+}
+
+
+/* =========================
+   PLACE CARD
+========================= */
+
+.main-place{
+
+    background:white;
+
+    border-radius:25px;
+
+    overflow:hidden;
+
+    margin-bottom:65px;
+
+    box-shadow:
+    0 15px 40px rgba(50,25,10,.15);
+}
+
+.main-place-header{
+
+    display:grid;
+
+    grid-template-columns:45% 55%;
+}
+
+.main-place-header img{
+
+    width:100%;
+
+    height:360px;
+
+    object-fit:cover;
+}
+
+.main-place-info{
+
+    padding:40px;
+}
+
+.main-place-info h2{
+
+    font-size:42px;
+
+    color:#6d4023;
+
+    margin-bottom:15px;
+}
+
+.main-place-info p{
+
+    line-height:1.8;
+
+    font-size:17px;
+
+    margin-bottom:25px;
+}
+
+
+/* =========================
+   SUB PLACE OPTIONS
+========================= */
+
+.options-title{
+
+    padding:30px 40px 15px;
+
+    color:#63391f;
+
+    font-size:25px;
+}
+
+.options-grid{
+
+    padding:20px 40px 40px;
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(4,1fr);
+
+    gap:18px;
+}
+
+.option-card{
+
+    background:#fbf5ec;
+
+    border-radius:18px;
+
+    overflow:hidden;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+    border:1px solid #eadbc8;
+}
+
+.option-card:hover{
+
+    transform:translateY(-7px);
+
+    box-shadow:
+    0 12px 25px rgba(60,30,10,.18);
+}
+
+.option-card img{
+
+    width:100%;
+
+    height:180px;
+
+    object-fit:cover;
+}
+
+.option-content{
+
+    padding:18px;
+}
+
+.option-content h3{
+
+    color:#63391f;
+
+    margin-bottom:8px;
+
+    font-size:19px;
+}
+
+.option-content p{
+
+    color:#765e4d;
+
+    font-size:14px;
+
+    line-height:1.5;
+}
+
+.view-btn{
+
+    margin-top:12px;
+
+    background:#63391f;
+
+    color:white;
+
+    border:none;
+
+    padding:9px 17px;
+
+    border-radius:20px;
+
+    cursor:pointer;
+}
+
+
+/* =========================
+   AI
+========================= */
+
+.ai-section{
+
+    background:#21130c;
+
+    color:white;
+
+    padding:75px 8%;
+
+    text-align:center;
+}
+
+.ai-section h2{
+
+    color:#e7bd72;
+
+    font-size:42px;
+
+    margin-bottom:15px;
+}
+
+.ai-box{
+
+    max-width:750px;
+
+    margin:30px auto;
+}
+
+.ai-box input{
+
+    width:70%;
+
+    padding:16px;
+
+    border:none;
+
+    border-radius:25px;
+
+    outline:none;
+}
+
+.ai-box button{
+
+    padding:16px 25px;
+
+    border:none;
+
+    border-radius:25px;
+
+    background:#d6a653;
+
+    cursor:pointer;
+
+    font-weight:bold;
+}
+
+#answer{
+
+    margin-top:25px;
+
+    background:#382319;
+
+    padding:20px;
+
+    border-radius:15px;
+
+    min-height:60px;
+
+    line-height:1.7;
+}
+
+
+/* =========================
+   CONTACT
+========================= */
+
+.contact{
+
+    padding:70px 8%;
+
+    text-align:center;
+}
+
+.contact h2{
+
+    font-size:42px;
+
+    color:#63391f;
+
+    margin-bottom:25px;
+}
+
+.contact-box{
+
+    max-width:650px;
+
+    margin:auto;
+
+    background:white;
+
+    padding:30px;
+
+    border-radius:20px;
+
+    box-shadow:
+    0 10px 30px rgba(0,0,0,.1);
+}
+
+.contact-box p{
+
+    margin:12px;
+
+    font-size:18px;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+
+    background:#21130c;
+
+    color:white;
+
+    text-align:center;
+
+    padding:25px;
+}
+
+
+/* =========================
+   DETAILS MODAL
+========================= */
+
+.details-modal{
+
+    display:none;
+
+    position:fixed;
+
+    inset:0;
+
+    background:
+    rgba(0,0,0,.82);
+
+    z-index:5000;
+
+    overflow-y:auto;
+
+    padding:25px;
+}
+
+.details-box{
+
+    max-width:1050px;
+
+    margin:30px auto;
+
+    background:#fffaf4;
+
+    border-radius:25px;
+
+    overflow:hidden;
+
+    position:relative;
+}
+
+.close-btn{
+
+    position:absolute;
+
+    right:20px;
+
+    top:20px;
+
+    width:45px;
+
+    height:45px;
+
+    border:none;
+
+    border-radius:50%;
+
+    background:#21130c;
+
+    color:white;
+
+    font-size:28px;
+
+    cursor:pointer;
+
+    z-index:5;
+}
+
+.details-image{
+
+    width:100%;
+
+    height:430px;
+
+    object-fit:cover;
+}
+
+.details-content{
+
+    padding:40px;
+}
+
+.details-content h2{
+
+    font-size:42px;
+
+    color:#63391f;
+
+    margin-bottom:20px;
+}
+
+.details-content h3{
+
+    color:#8a5b32;
+
+    font-size:24px;
+
+    margin-top:28px;
+
+    margin-bottom:12px;
+}
+
+.details-content p{
+
+    font-size:17px;
+
+    line-height:1.8;
+}
+
+
+/* =========================
+   INFO BOXES
+========================= */
+
+.info-grid{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(3,1fr);
+
+    gap:15px;
+
+    margin-top:20px;
+}
+
+.info-box{
+
+    background:#f3e6d4;
+
+    padding:20px;
+
+    border-radius:15px;
+}
+
+.info-box strong{
+
+    display:block;
+
+    color:#63391f;
+
+    margin-bottom:8px;
+}
+
+
+/* =========================
+   MAP
+========================= */
+
+.map-box{
+
+    margin-top:20px;
+
+    border-radius:18px;
+
+    overflow:hidden;
+
+    height:350px;
+
+    background:#ddd;
+}
+
+.map-box iframe{
+
+    width:100%;
+
+    height:100%;
+
+    border:0;
+}
+
+.map-button{
+
+    display:inline-block;
+
+    margin-top:15px;
+
+    background:#63391f;
+
+    color:white;
+
+    text-decoration:none;
+
+    padding:12px 22px;
+
+    border-radius:25px;
+}
+
+
+/* =========================
+   DETAIL GALLERY
+========================= */
+
+.detail-gallery{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(4,1fr);
+
+    gap:15px;
+
+    margin-top:20px;
+}
+
+.detail-gallery img{
+
+    width:100%;
+
+    height:180px;
+
+    object-fit:cover;
+
+    border-radius:15px;
+
+    cursor:pointer;
+
+    transition:.3s;
+}
+
+.detail-gallery img:hover{
+
+    transform:scale(1.04);
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:900px){
+
+    .options-grid{
+
+        grid-template-columns:
+        repeat(2,1fr);
+    }
+
+    .main-place-header{
+
+        grid-template-columns:1fr;
+    }
+
+    .main-place-header img{
+
+        height:300px;
+    }
+
+    .info-grid{
+
+        grid-template-columns:1fr;
+    }
+
+    .detail-gallery{
+
+        grid-template-columns:
+        repeat(2,1fr);
+    }
+
+}
+
+@media(max-width:600px){
+
+    .navbar{
+
+        flex-direction:column;
+
+        gap:15px;
+    }
+
+    .nav-links{
+
+        gap:12px;
+
+        flex-wrap:wrap;
+
+        justify-content:center;
+    }
+
+    .hero h1{
+
+        font-size:40px;
+    }
+
+    .hero p{
+
+        font-size:17px;
+    }
+
+    .options-grid{
+
+        grid-template-columns:1fr;
+
+        padding:20px;
+    }
+
+    .options-title{
+
+        padding:25px 20px 10px;
+    }
+
+    .main-place-info{
+
+        padding:25px;
+    }
+
+    .main-place-info h2{
+
+        font-size:32px;
+    }
+
+    .ai-box input{
+
+        width:100%;
+
+        margin-bottom:10px;
+    }
+
+    .detail-gallery{
+
+        grid-template-columns:1fr;
+    }
+
+    .details-image{
+
+        height:280px;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     NAVBAR
+========================= -->
+
+<nav class="navbar">
+
+    <div class="logo">
+        🤖 AI Tourist Guide
+    </div>
+
+    <div class="nav-links">
+
+        <a href="#home">Home</a>
+
+        <a href="#places">Places</a>
+
+        <a href="#ai">AI Guide</a>
+
+        <a href="#contact">Contact</a>
+
+    </div>
+
+</nav>
+
+
+
+<!-- =========================
+     HERO
+========================= -->
+
+<section class="hero" id="home">
+
+    <div class="hero-content">
+
+        <h1>
+            Discover Bagalkote
+        </h1>
+
+        <p>
+            Explore Ancient History,
+            Chalukyan Architecture,
+            Temples, Culture & Heritage
+        </p>
+
+        <button
+        class="hero-btn"
+        onclick="document
+        .getElementById('places')
+        .scrollIntoView()">
+
+            Explore Destinations
+
+        </button>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     INTRO
+========================= -->
+
+<section class="intro">
+
+    <h2>
+        Welcome to Bagalkote
+    </h2>
+
+    <p>
+
+        Discover the historical treasures of
+        Badami, Pattadakal, Aihole and
+        Kudala Sangama.
+
+        Click any attraction below to see
+        its photo, history, location,
+        map and visitor information.
+
+    </p>
+
+</section>
+
+
+
+<!-- =========================
+     PLACES
+========================= -->
+
+<section
+class="places-section"
+id="places">
+
+<h2 class="section-title">
+
+    Explore Tourist Places
+
+</h2>
+
+
+
+<!-- =====================================================
+     BADAMI
+===================================================== -->
+
+<div class="main-place">
+
+    <div class="main-place-header">
+
+        <img
+        src="https://cdn.s3waas.gov.in/s3a1d33d0dfec820b41b54430b50e96b5c/uploads/bfi_thumb/2018072842-1-rssv6h2c9rk9o1851rcm3pxsygd8lq2hcg21avyl56.jpg"
+        alt="Badami Caves">
+
+        <div class="main-place-info">
+
+            <h2>
+                🏛️ Badami
+            </h2>
+
+            <p>
+
+                Badami was an important Chalukyan
+                centre and is famous for its
+                rock-cut cave temples, sandstone
+                hills, Agasthya Tirtha and
+                Badami Fort.
+
+            </p>
+
+            <p>
+
+                Select an attraction below to
+                view complete information.
+
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <h3 class="options-title">
+        Badami Attractions
+    </h3>
+
+
+    <div class="options-grid">
+
+
+        <!-- BADAMI CAVE -->
+
+        <div
+        class="option-card"
+        onclick="showDetails('badamiCave')">
+
+            <img
+            src="https://cdn.s3waas.gov.in/s3a1d33d0dfec820b41b54430b50e96b5c/uploads/bfi_thumb/2018072842-1-rssv6h2c9rk9o1851rcm3pxsygd8lq2hcg21avyl56.jpg"
+            alt="Badami Cave">
+
+            <div class="option-content">
+
+                <h3>
+                    Badami Cave Temples
+                </h3>
+
+                <p>
+                    Ancient rock-cut cave temples.
+                </p>
+
+                <button class="view-btn">
+                    View Details
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- AGASTHYA LAKE -->
+
+        <div
+        class="option-card"
+        onclick="showDetails('agasthya')">
+
+            <img
+            src="https://cdn.s3waas.gov.in/s3a1d33d0dfec820b41b54430b50e96b5c/uploads/bfi_thumb/2018072821-rssv6e8tp9gep7c8i84qe8nf6ar4ymrac23kv22rnu.jpg"
+            alt="Agasthya Lake">
+
+            <div class="option-content">
+
+                <h3>
+                    Agasthya Lake
+                </h3>
+
+                <p>
+                    Historic lake surrounded by temples.
+                </p>
+
+                <button class="view-btn">
+                    View Details
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- BADAMI FORT -->
+
+        <div
+        class="option-card"
+        onclick="showDetails('badamiFort')">
+
+            <img
+            src="https://cdn.s3waas.gov.in/s3a1d33d0dfec820b41b54430b50e96b5c/uploads/bfi_thumb/2018072859-2-rssv6jvuu9o4mv41lakht786qlzc8tdocu0hqpuemi.jpg"
+            alt="Badami Fort">
+
+            <div class="option-content">
+
+                <h3>
+                    Badami Fort
+                </h3>
+
+                <p>
+                    Historic fort on the sandstone hill.
+                </p>
+
+                <button class="view-btn">
+                    View Details
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- BHOOTHNATH -->
+
+        <div
+        class="option-card"
+        onclick="showDetails('bhoothnath')">
+
+            <img
+            src="https://cdn.s3waas.gov.in/s3a1d33d0dfec820b41b54430b50e96b5c/uploads/bfi_thumb/2018072839-3-rssv6h2c9rk9o1851rcm3pxsygd8lq2hcg21avyl56.jpg"
+            alt="Bhoothnath Temple">
+
+            <div class="option-content">
+
+                <h3>
+                    Bhoothnath Temple
+                </h3>
+
+                <p>
+                    Temple near Agasthya Lake.
+                </p>
+
+                <button class="view-btn">
+                    View Details
+                </button>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</div>
+
+
+
+<!-- =====================================================
+     PATTADAKAL
+===================================================== -->
+
+<div class="main-place">
+
+    <div class="main-place-header">
+
+        <img
+        src="https://cdn.s3waas.gov.in/s3a1d33d0dfec820b41b54430b50e96b5c/uploads/bfi_thumb/2018072889-1-rssv6ol1sfuk8wx7tulmno1hpjc6bawc1h9x53nfre.jpg"
+        alt="Pattadakal">
+
+        <div class="main-place-info">
+
+            <h2>
+                🛕 Pattadakal
+            </h2>
+
+            <p>
+
+                Pattadakal is a major Chalukyan
+                architectural centre on the
+                Malaprabha River.
+
+            </p>
+
+            <p>
+
+                Explore the individual temples
+                below.
+
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <h3 class="options-title">
+        Pattadakal Attractions
+    </h3>
+
+
+    <div class="options-grid">
+
+
+        <div
+        class="option-card"
+        onclick="showDetails('virupaksha')">
+
+            <img
+            src="https://cdn.s3waas.gov.in/s3a1d33d0dfec820b41b54430b50e96b5c/uploads/bfi_thumb/2018072889-1-rssv6ol1sfuk8wx7tulmno1hpjc6bawc1h9x53nfre.jpg"
+            alt="Virupaksha Temple">
+
+            <div class="option-content">
+
+                <h3>
+                    Virupaksha Temple
+                </h3>
+
+                <p>
+                    Large Dravidian-style temple.
+                </p>
+
+                <button class="view-btn">
+                    View Details
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <div
+        class="option-card"
+        onclick="showDetails('mallikarjuna')">
+
+            <img
+            src="https://cdn.s3waas.gov.in/s3a1d33d0dfec820b41b54430b50e96b5c/uploads/bfi_thumb/2018072850-1-rssv6iy0nfmub95eqs5v8pgq583z149y0pd09fvssq.jpg"
+            alt="Mallikarjuna Temple">
+
+            <div class="option-content">
+
+                <h3>
+                    Mallikarjuna Temple
+                </h3>
+
+                <p>
+                    Temple built by Trailokyamahadevi.
+                </p>
+
+                <button class="view-btn">
+                    View Details
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <div
+        class="option-card"
+        onclick="showDetails('sangameshwara')">
+
+            <img
+            src="https://cdn.s3waas.gov.in/s3a1d33d0dfec820b41b54430b50e96b5c/uploads/bfi_thumb/2018072866-rssv6lrj7xqpa31babdqy6r3xdq2o7l513bgp9rma2.jpg"
+            alt="Sangameshwara Temple">
+
+            <div class="option-content">
+
+                <h3>
+                    Sangameshwara Temple
+                </h3>
+
+                <p>
+                    Early Dravidian-style temple.
+                </p>
+
+                <button class="view-btn">
+                    View Details
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <div
+        class="option-card"
+        onclick="showDetails('papanatha')">
+
+            <img
+            src="https://cdn.s3waas.gov.in/s3a1d33d0dfec820b41b54430b50e96b5c/uploads/bfi_thumb/2018072831-1-rssv6f6nw3hp0tavcqjcyqevromi6bv0o6r2cc1dhm.jpg"
+            alt="Pattadakal Temple">
+
+            <div class="option-content">
+
+                <h3>
+                    Papanatha Temple
+                </h3>
+
+                <p>
+                    Temple showing northern-style influence.
+                </p>
+
+                <button class="view-btn">
+                    View Details
+                </button>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</div>
+
+
+
+<!-- =====================================================
+     AIHOLE
+===================================================== -->
+
+<div class="main-place">
+
+    <div class="main-place-header">
+
+        <img
+        src="https://cdn.s3waas.gov.in/s3a1d33d0dfec820b41b54430b50e96b5c/uploads/bfi_thumb/2018072858-rssv6jvuu9o4mv41lakht786qlzc8tdocu0hqpuemi.jpg"
+        alt="Aihole">
+
+        <div class="main-place-info">
+
+            <h2>
+                🏺 Aihole
+            </h2>
+
+            <p>
+
+                Aihole is an important early
+                Chalukyan centre known for
+                experimentation in temple
+                architecture.
+
+            </p>
+
+            <p>
+
+                Click an attraction to explore
+                its history and location.
+
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <h3 class="options-title">
+        Aihole Attractions
+    </h3>
+
+
+    <div class="options-grid">
+
+
+        <div
+        class="option-card"
+        onclick="showDetails('durga')">
+
+            <img
+            src="https://cdn.s3waas.gov.in/s3a1d33d0dfec820b41b54430b50e96b5c/uploads/bfi_thumb/20180728100-rssv6cd5bldu1zeyt7bh994hzj0ej8jtnsslwi5k0a.jpg"
+            alt="Durga Temple">
+
+            <div class="option-content">
+
+                <h3>
+                    Durga Temple
+                </h3>
+
+                <p>
+                    Famous apsidal temple.
+                </p>
+
+                <button class="view-btn">
+                    View Details
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <div
+        class="option-card"
+        onclick="showDetails('ladkhan')">
+
+            <img
+            src="https://cdn.s3waas.gov.in/s3a1d33d0dfec820b41b54430b50e96b5c/uploads/bfi_thumb/2018072869-rssv6lrj7xqpa31babdqy6r3xdq2o7l513bgp9rma2.jpg"
+            alt="Lad Khan Temple">
+
+            <div class="option-content">
+
+                <h3>
+                    Ladh Khan Temple
+                </h3>
+
+                <p>
+                    Early experimental temple design.
+                </p>
+
+                <button class="view-btn">
+                    View Details
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <div
+        class="option-card"
+        onclick="showDetails('meguti')">
+
+            <img
+            src="https://cdn.s3waas.gov.in/s3a1d33d0dfec820b41b54430b50e96b5c/uploads/bfi_thumb/20180728100-rssv6cd5bldu1zeyt7bh994hzj0ej8jtnsslwi5k0a.jpg"
+            alt="Meguti Temple">
+
+            <div class="option-content">
+
+                <h3>
+                    Meguti Temple
+                </h3>
+
+                <p>
+                    Dated monument from 634 AD.
+                </p>
+
+                <button class="view-btn">
+                    View Details
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <div
+        class="option-card"
+        onclick="showDetails('ravanaphadi')">
+
+            <img
+            src="https://cdn.s3waas.gov.in/s3a1d33d0dfec820b41b54430b50e96b5c/uploads/bfi_thumb/2018072817-rssv6daziff4dldlnpq3tqvykwvrqxnjzxg3ds45u2.jpg"
+            alt="Ravanaphadi Cave">
+
+            <div class="option-content">
+
+                <h3>
+                    Ravanaphadi Cave
+                </h3>
+
+                <p>
+                    Ancient rock-cut Shiva temple.
+                </p>
+
+                <button class="view-btn">
+                    View Details
+                </button>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</div>
+
+
+
+<!-- =====================================================
+     KUDALA SANGAMA
+===================================================== -->
+
+<div class="main-place">
+
+    <div class="main-place-header">
+
+        <img
+        src="https://cdn.s3waas.gov.in/s3a1d33d0dfec820b41b54430b50e96b5c/uploads/bfi_thumb/2018080336-rssv6v5x4a3ki6nnrfg0n4dpv8fqt6mgedubi1doju.jpg"
+        alt="Kudala Sangama">
+
+        <div class="main-place-info">
+
+            <h2>
+                🌊 Kudala Sangama
+            </h2>
+
+            <p>
+
+                Kudala Sangama is an important
+                pilgrimage and cultural centre
+                associated with Basavanna.
+
+            </p>
+
+            <p>
+
+                Select an attraction below
+                for complete information.
+
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <h3 class="options-title">
+        Kudala Sangama Attractions
+    </h3>
+
+
+    <div class="options-grid">
+
+
+        <div
+        class="option-card"
+        onclick="showDetails('riverView')">
+
+            <img
+            src="https://cdn.s3waas.gov.in/s3a1d33d0dfec820b41b54430b50e96b5c/uploads/bfi_thumb/2018080336-rssv6v5x4a3ki6nnrfg0n4dpv8fqt6mgedubi1doju.jpg"
+            alt="Kudala Sangama River">
+
+            <div class="option-content">
+
+                <h3>
+                    River View
+                </h3>
+
+                <p>
+                    Krishna and Malaprabha river area.
+                </p>
+
+                <button class="view-btn">
+                    View Details
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <div
+        class="option-card"
+        onclick="showDetails('sangamaTemple')">
+
+            <img
+            src="https://cdn.s3waas.gov.in/s3a1d33d0dfec820b41b54430b50e96b5c/uploads/bfi_thumb/2018080351-rssv6v5x4a3ki6nnrfg0n4dpv8fqt6mgedubi1doju.jpg"
+            alt="Kudala Sangama Temple">
+
+            <div class="option-content">
+
+                <h3>
+                    Sangameshwara Temple
+                </h3>
+
+                <p>
+                    Historic temple complex.
+                </p>
+
+                <button class="view-btn">
+                    View Details
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <div
+        class="option-card"
+        onclick="showDetails('aikya')">
+
+            <img
+            src="https://cdn.s3waas.gov.in/s3a1d33d0dfec820b41b54430b50e96b5c/uploads/bfi_thumb/2018080366-rssv6w3rb44utsmalxun7m56gmb40vq6qihszbcadm.jpg"
+            alt="Aikya Linga">
+
+            <div class="option-content">
+
+                <h3>
+                    Basavanna Aikya Linga
+                </h3>
+
+                <p>
+                    Sacred Aikya Mantapa area.
+                </p>
+
+                <button class="view-btn">
+                    View Details
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <div
+        class="option-card"
+        onclick="showDetails('auditorium')">
+
+            <img
+            src="https://cdn.s3waas.gov.in/s3a1d33d0dfec820b41b54430b50e96b5c/uploads/bfi_thumb/2018080325-rssv6v5x4a3ki6nnrfg0n4dpv8fqt6mgedubi1doju.jpg"
+            alt="Kudala Sangama Auditorium">
+
+            <div class="option-content">
+
+                <h3>
+                    Auditorium Hall
+                </h3>
+
+                <p>
+                    Development centre at Kudala Sangama.
+                </p>
+
+                <button class="view-btn">
+                    View Details
+                </button>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</div>
+
+
+</section>
+
+
+
+<!-- =========================
+     AI GUIDE
+========================= -->
+
+<section
+class="ai-section"
+id="ai">
+
+    <h2>
+        🤖 AI Tourist Guide
+    </h2>
+
+    <p>
+        Ask about Badami, Pattadakal,
+        Aihole or Kudala Sangama.
+    </p>
+
+    <div class="ai-box">
+
+        <input
+        type="text"
+        id="question"
+        placeholder="Example: Tell me about Badami">
+
+        <button onclick="askAI()">
+            Ask AI
+        </button>
+
+        <div id="answer">
+            Your AI answer will appear here.
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     CONTACT
+========================= -->
+
+<section
+class="contact"
+id="contact">
+
+    <h2>
+        Contact
+    </h2>
+
+    <div class="contact-box">
+
+        <p>
+            📍 Bagalkote District, Karnataka
+        </p>
+
+        <p>
+            ☎️ District Administration:
+            <strong>08354-235091</strong>
+        </p>
+
+        <p>
+            🌐 AI Tourist Guide - Bagalkote
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+    <p>
+        © 2026 AI Tourist Guide - Bagalkote
+    </p>
+
+    <p>
+        Explore • Learn • Experience
+    </p>
+
+</footer>
+
+
+
+<!-- =====================================================
+     DETAILS POPUP
+===================================================== -->
+
+<div
+class="details-modal"
+id="detailsModal">
+
+
+    <div class="details-box">
+
+
+        <button
+        class="close-btn"
+        onclick="closeDetails()">
+
+            ×
+
+        </button>
+
+
+        <img
+        id="detailImage"
+        class="details-image"
+        src=""
+        alt="Tourist place">
+
+
+        <div class="details-content">
+
+
+            <h2 id="detailTitle">
+                Place
+            </h2>
+
+
+            <h3>
+                📖 History
+            </h3>
+
+            <p id="detailHistory">
+            </p>
+
+
+            <div class="info-grid">
+
+
+                <div class="info-box">
+
+                    <strong>
+                        📍 Location
+                    </strong>
+
+                    <span id="detailLocation">
+                    </span>
+
+                </div>
+
+
+                <div class="info-box">
+
+                    <strong>
+                        🕐 Opening
+                    </strong>
+
+                    <span>
+                        Official fixed opening
+                        time is not listed.
+                    </span>
+
+                </div>
+
+
+                <div class="info-box">
+
+                    <strong>
+                        🕐 Closing
+                    </strong>
+
+                    <span>
+                        Official fixed closing
+                        time is not listed.
+                    </span>
+
+                </div>
+
+
+            </div>
+
+
+            <h3>
+                🗺️ Location Map
+            </h3>
+
+
+            <div class="map-box">
+
+                <iframe
+                id="detailMap"
+                loading="lazy">
+                </iframe>
+
+            </div>
+
+
+            <a
+            id="mapButton"
+            class="map-button"
+            target="_blank">
+
+                📍 Open in Google Maps
+
+            </a>
+
+
+            <h3>
+                ⭐ Important Information
+            </h3>
+
+            <p id="detailInfo">
+            </p>
+
+
+            <h3>
+                📸 Photos
+            </h3>
+
+
+            <div
+            class="detail-gallery"
+            id="detailGallery">
+            </div>
+
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<script>
+
+
+/* =====================================================
+   PLACE DATA
+===================================================== */
+
+const touristData = {
+
+
+/* ================= BADAMI ================= */
+
+badamiCave: {
+
+    title:
+    "Badami Cave Temples",
+
+    image:
+    "https://cdn.s3waas.gov.in/s3a1d33d0dfec820b41b54430b50e96b5c/uploads/bfi_thumb/2018072842-1-rssv6h2c9rk9o1851rcm3pxsygd8lq2hcg21avyl56.jpg",
+
+    location:
+    "Badami, Bagalkote District, Karnataka",
+
+    map:
+    "Badami Cave Temples Karnataka",
+
+    history:
+    "The Badami cave temples were carved into the sandstone hill opposite Badami Fort. The group contains four cave temples: three Brahmanical caves and one Jain cave. The official Bagalkote District page states that Mangalesha, who ruled around 598–610 AD, completed the cave temples.",
+
+    info:
+    "Cave I has important Shaivite carvings including the dancing Shiva. Cave II has Vaishnavite themes. Cave III contains both Shaivite and Vaishnavite sculptures and an inscription recording its creation in 578 AD. Cave IV is Jain and contains an image of Mahavira.",
+
+    photos:[
+
+        "https://cdn.s3waas.gov.in/s3a1d33d0dfec820b41b54430b50e96b5c/uploads/bfi_thumb/2018072842-1-rssv6h2c9rk9o1851rcm3pxsygd8lq2hcg21avyl56.jpg",
+
+        "https://cdn.s3waas.gov.in/s3a1d33d0dfec820b41b54430b50e96b5c/uploads/bfi_thumb/2018072859-2-rssv6jvuu9o4mv41lakht786qlzc8tdocu0hqpuemi.jpg",
+
+        "https://cdn.s3waas.gov.in/s3a1d33d0dfec820b41b54430b50e96b5c/uploads/bfi_thumb/2018072848-rssv6i06glljzn6rw9r8o7p9ju8ltf67okpis5x6yy.jpg",
+
+        "https://cdn.s3waas.gov.in/s3a1d33d0dfec820b41b54430b50e96b5c/uploads/bfi_thumb/2018072850-1-rssv6iy0nfmub95eqs5v8pgq583z149y0pd09fvssq.jpg"
+
+    ]
+
+},
+
+
+agasthya: {
+
+    title:
+    "Agasthya Tirtha / Lake",
+
+    image:
+    "https://cdn.s3waas.gov.in/s3a1d33d0dfec820b41b54430b50e96b5c/uploads/bfi_thumb/2018072821-rssv6e8tp9gep7c8i84qe8nf6ar4ymrac23kv22rnu.jpg",
+
+    location:
+    "Agasthya Tirtha, Badami, Karnataka",
+
+    map:
+    "Agasthya Lake Badami Karnataka",
+
+    history:
+    "Agasthya Tirtha is the historic tank in Badami around which several temples are located. The official Badami page identifies the tank as a well-built tank locally called Agasthya Tirtha.",
+
+    info:
+    "The lake provides a scenic view of the sandstone hills, caves and surrounding temples. It is one of the important visual landmarks of Badami.",
+
+    photos:[
+
+        "https://cdn.s3waas.gov.in/s3a1d33d0dfec820b41b54430b50e96b5c/uploads/bfi_thumb/2018072821-rssv6e8tp9gep7c8i84qe8nf6ar4ymrac23kv22rnu.jpg",
+
+        "https://cdn.s3waas.gov.in/s3a1d33d0dfec820b41b54430b50e96b5c/uploads/bfi_thumb/2018072859-2-rssv6jvuu9o4mv41lakht786qlzc8tdocu0hqpuemi.jpg",
+
+        "https://cdn.s3waas.gov.in/s3a1d33d0dfec820b41b54430b50e96b5c/uploads/bfi_thumb/2018072842-1-rssv6h2c9rk9o1851rcm3pxsygd8lq2hcg21avyl56.jpg",
+
+        "https://cdn.s3waas.gov.in/s3a1d33d0dfec820b41b54430b50e96b5c/uploads/bfi_thumb/2018072839-3-rssv6h2c9rk9o1851rcm3pxsygd8lq2hcg21avyl56.jpg"
+
+    ]
+
+},
+
+
+badamiFort: {
+
+    title:
+    "Badami Fort",
+
+    image:
+    "https://cdn.s3waas.gov.in/s3a1d33d0dfec820b41b54430b50e96b5c/uploads/bfi_thumb/2018072859-2-rssv6jvuu9o4mv41lakht786qlzc8tdocu0hqpuemi.jpg",
+
+    location:
+    "Badami Fort, Badami, Karnataka",
+
+    map:
+    "Badami Fort Karnataka",
+
+    history:
+    "Badami Fort is strategically situated on top of a hill. The official Bagalkote District page describes granaries, a treasury and temples on the hill, including Malegitti Shivalaya.",
+
+    info:
+    "The fort area provides views of Badami's sandstone landscape and historic monuments. The official page also notes a route from the caves towards the southern part of Badami Fort.",
+
+    photos:[
+
+        "https://cdn.s3waas.gov.in/s3a1d33d0dfec820b41b54430b50e96b5c/uploads/bfi_thumb/2018072859-2-rssv6jvuu9o4mv41lakht786qlzc8tdocu0hqpuemi.jpg",
+
+        "https://cdn.s3waas.gov.in/s3a1d33d0dfec820b41b54430b50e96b5c/uploads/bfi_thumb/2018072848-rssv6i06glljzn6rw9r8o7p9ju8ltf67okpis5x6yy.jpg",
+
+        "https://cdn.s3waas.gov.in/s3a1d33d0dfec820b41b54430b50e96b5c/uploads/bfi_thumb/2018072842-1-rssv6h2c9rk9o1851rcm3pxsygd8lq2hcg21avyl56.jpg",
+
+        "https://cdn.s3waas.gov.in/s3waas.gov.in/s3a1d33d0dfec820b41b54430b50e96b5c/uploads/bfi_thumb/2018072839-3-rssv6h2c9rk9o1851rcm3pxsygd8lq2hcg21avyl56.jpg"
+
+    ]
+
+},
+
+
+bhoothnath: {
+
+    title:
+    "Bhoothnath Temple",
+
+    image:
+    "https://cdn.s3waas.gov.in/s3a1d33d0dfec820b41b54430b50e96b5c/uploads/bfi_thumb/2018072839-3-rssv6h2c9rk9o1851rcm3pxsygd8lq2hcg21avyl56.jpg",
+
+    location:
+    "Bhoothnath Temple, Badami, Karnataka",
+
+    map:
+    "Bhoothnath Temple Badami Karnataka",
+
+    history:
+    "Bhoothnath Temple is one of the prominent temples around the Agasthya Tirtha area of Badami. The temple forms an important part of the historic landscape surrounding the lake.",
+
+    info:
+    "The temple and lake together create one of the best-known scenic heritage views of Badami.",
+
+    photos:[
+
+        "https://cdn.s3waas.gov.in/s3a1d33d0dfec820b41b54430b50e96b5c/uploads/bfi_thumb/2018072839-3-rssv6h2c9rk9o1851rcm3pxsygd8lq2hcg21avyl56.jpg",
+
+        "https://cdn.s3waas.gov.in/s3a1d33d0dfec820b41b54430b50e96b5c/uploads/bfi_thumb/2018072821-rssv6e8tp9gep7c8i84qe8nf6ar4ymrac23kv22rnu.jpg",
+
+        "https://cdn.s3waas.gov.in/s3a1d33d0dfec820b41b54430b50e96b5c/uploads/bfi_thumb/2018072848-rssv6i06glljzn6rw9r8o7p9ju8ltf67okpis5x6yy.jpg",
+
+        "https://cdn.s3waas.gov.in/s3a1d33d0dfec820b41b54430b50e96b5c/uploads/bfi_thumb/2018072842-1-rssv6h2c9rk9o1851rcm3pxsygd8lq2hcg21avyl56.jpg"
+
+    ]
+
+},
+
+
+
+/* ================= PATTADAKAL ================= */
+
+virupaksha: {
+
+    title:
+    "Virupaksha Temple",
+
+    image:
+    "https://cdn.s3waas.gov.in/s3a1d33d0dfec820b41b54430b50e96b5c/uploads/bfi_thumb/2018072889-1-rssv6ol1sfuk8wx7tulmno1hpjc6bawc1h9x53nfre.jpg",
+
+    location:
+    "Pattadakal, Bagalkote District, Karnataka",
+
+    map:
+    "Virupaksha Temple Pattadakal Karnataka",
+
+    history:
+    "The Virupaksha Temple was built by Queen Lokamahadevi, wife of Vikramaditya II, and was originally called Lokeshwara. The official district page describes it as the largest temple in the Pattadakal enclosure and notes its rich sculpture.",
+
+    info:
+    "The temple is built in the southern Dravida style and contains sculptures including Lingodbhava, Nataraja, Ravananugraha and Ugranarasimha.",
+
+    photos:[
+
+        "https://cdn.s3waas.gov.in/s3a1d33d0dfec820b41b54430b50e96b5c/uploads/bfi_thumb/2018072889-1-rssv6ol1sfuk8wx7tulmno1hpjc6bawc1h9x53nfre.jpg",
+
+        "https://cdn.s3waas.gov.in/s3a1d33d0dfec820b41b54430b50e96b5c/uploads/bfi_thumb/2018072831-1-rssv6f6nw3hp0tavcqjcyqevromi6bv0o6r2cc1dhm.jpg",
+
+        "https://cdn.s3waas.gov.in/s3a1d33d0dfec820b41b54430b50e96b5c/uploads/bfi_thumb/2018072889-1-rssv6ol1sfuk8wx7tulmno1hpjc6bawc1h9x53nfre.jpg",
+
+        "https://cdn.s3waas.gov.in/s3a1d33d0dfec820b41b54430b50e96b5c/uploads/bfi_thumb/2018072831-1-rssv6f6nw3hp0tavcqjcyqevromi6bv0o6r2cc1dhm.jpg"
+
+    ]
+
+},
+
+
+mallikarjuna: {
+
+    title:
+    "Mallikarjuna Temple",
+
+    image:
+    "https://cdn.s3waas.gov.in/s3a1d33d0dfec820b41b54430b50e96b5c/uploads/bfi_thumb/2018072850-1-rssv6iy0nfmub95eqs5v8pgq583z149y0pd09fvssq.jpg",
+
+    location:
+    "Pattadakal, Bagalkote District, Karnataka",
+
+    map:
+    "Mallikarjuna Temple Pattadakal Karnataka",
+
+    history:
+    "The Mallikarjuna Temple was built by Trailokyamahadevi, queen of Vikramaditya II, and was originally called Trailokeshwara. The official district page notes its similarity to Virupaksha Temple but with smaller dimensions.",
+
+    info:
+    "The temple has ceiling panels including Gajalakshmi and Nataraja with Parvathi. Its pillars contain scenes associated with the life of Krishna.",
+
+    photos:[
+
+        "https://cdn.s3waas.gov.in/s3a1d33d0dfec820b41b54430b50e96b5c/uploads/bfi_thumb/2018072850-1-rssv6iy0nfmub95eqs5v8pgq583z149y0pd09fvssq.jpg",
+
+        "https://cdn.s3waas.gov.in/s3a1d33d0dfec820b41b54430b50e96b5c/uploads/bfi_thumb/2018072889-1-rssv6ol1sfuk8wx7tulmno1hpjc6bawc1h9x53nfre.jpg",
+
+        "https://cdn.s3waas.gov.in/s3a1d33d0dfec820b41b54430b50e96b5c/uploads/bfi_thumb/2018072866-rssv6lrj7xqpa31babdqy6r3xdq2o7l513bgp9rma2.jpg",
+
+        "https://cdn.s3waas.gov.in/s3a1d33d0dfec820b41b54430b50e96b5c/uploads/bfi_thumb/2018072831-1-rssv6f6nw3hp0tavcqjcyqevromi6bv0o6r2cc1dhm.jpg"
+
+    ]
+
+},
+
+
+sangameshwara: {
+
+    title:
+    "Sangameshwara Temple",
+
+    image:
+    "https://cdn.s3waas.gov.in/s3a1d33d0dfec820b41b54430b50e96b5c/uploads/bfi_thumb/2018072866-rssv6lrj7xqpa31babdqy6r3xdq2o7l513bgp9rma2.jpg",
+
+    location:
+    "Pattadakal, Bagalkote District, Karnataka",
+
+    map:
+    "Sangameshwara Temple Pattadakal Karnataka",
+
+    history:
+    "The Sangameshwara Temple, earlier called Vijayeshwara, was built by King Vijayaditya between 696 and 733 AD. The official district page describes it as perhaps the oldest temple in Pattadakal.",
+
+    info:
+    "It follows the Dravidian style and contains a sanctum, inner passage and hall with sculptures on the outer walls.",
+
+    photos:[
+
+        "https://cdn.s3waas.gov.in/s3a1d33d0dfec820b41b54430b50e96b5c/uploads/bfi_thumb/2018072866-rssv6lrj7xqpa31babdqy6r3xdq2o7l513bgp9rma2.jpg",
+
+        "https://cdn.s3waas.gov.in/s3a1d33d0dfec820b41b54430b50e96b5c/uploads/bfi_thumb/2018072831-1-rssv6f6nw3hp0tavcqjcyqevromi6bv0o6r2cc1dhm.jpg",
+
+        "https://cdn.s3waas.gov.in/s3a1d33d0dfec820b41b54430b50e96b5c/uploads/bfi_thumb/2018072889-1-rssv6ol1sfuk8wx7tulmno1hpjc6bawc1h9x53nfre.jpg",
+
+        "https://cdn.s3waas.gov.in/s3a1d33d0dfec820b41b54430b50e96b5c/uploads/bfi_thumb/2018072850-1-rssv6iy0nfmub95eqs5v8pgq583z149y0pd09fvssq.jpg"
+
+    ]
+
+},
+
+
+papanatha: {
+
+    title:
+    "Papanatha Temple",
+
+    image:
+    "https://cdn.s3waas.gov.in/s3a1d33d0dfec820b41b54430b50e96b5c/uploads/bfi_thumb/2018072831-1-rssv6f6nw3hp0tavcqjcyqevromi6bv0o6r2cc1dhm.jpg",
+
+    location:
+    "Pattadakal, Bagalkote District, Karnataka",
+
+    map:
+    "Papanatha Temple Pattadakal Karnataka",
+
+    history:
+    "The Papanatha Temple is located outside the main enclosure. The official district page dates it to about 680 AD and describes it as an early attempt to develop northern architectural forms.",
+
+    info:
+    "The temple contains sculpted scenes associated with the Ramayana and Mahabharata.",
+
+    photos:[
+
+        "https://cdn.s3waas.gov.in/s3a1d33d0dfec820b41b54430b50e96b5c/uploads/bfi_thumb/2018072831-1-rssv6f6nw3hp0tavcqjcyqevromi6bv0o6r2cc1dhm.jpg",
+
+        "https://cdn.s3waas.gov.in/s3a1d33d0dfec820b41b54430b50e96b5c/uploads/bfi_thumb/2018072889-1-rssv6ol1sfuk8wx7tulmno1hpjc6bawc1h9x53nfre.jpg",
+
+        "https://cdn.s3waas.gov.in/s3a1d33d0dfec820b41b54430b50e96b5c/uploads/bfi_thumb/2018072850-1-rssv6iy0nfmub95eqs5v8pgq583z149y0pd09fvssq.jpg",
+
+        "https://cdn.s3waas.gov.in/s3a1d33d0dfec820b41b54430b50e96b5c/uploads/bfi_thumb/2018072866-rssv6lrj7xqpa31babdqy6r3xdq2o7l513bgp9rma2.jpg"
+
+    ]
+
+},
+
+
+
+/* ================= AIHOLE ================= */
+
+durga: {
+
+    title:
+    "Durga Temple - Aihole",
+
+    image:
+    "https://cdn.s3waas.gov.in/s3a1d33d0dfec820b41b54430b50e96b5c/uploads/bfi_thumb/20180728100-rssv6cd5bldu1zeyt7bh994hzj0ej8jtnsslwi5k0a.jpg",
+
+    location:
+    "Durga Temple, Aihole, Bagalkote District, Karnataka",
+
+    map:
+    "Durga Temple Aihole Karnataka",
+
+    history:
+    "The Durga Temple derives its name from Durgadagudi, meaning temple near the fort. The official district page says it is dedicated to Vishnu and appears to be a Hindu adaptation of a Buddhist chaitya hall, with an apsidal end.",
+
+    info:
+    "The temple stands on a high platform and has a Rekhanagara-style shikhara. It is one of the most elaborately decorated monuments at Aihole.",
+
+    photos:[
+
+        "https://cdn.s3waas.gov.in/s3a1d33d0dfec820b41b54430b50e96b5c/uploads/bfi_thumb/20180728100-rssv6cd5bldu1zeyt7bh994hzj0ej8jtnsslwi5k0a.jpg",
+
+        "https://cdn.s3waas.gov.in/s3a1d33d0dfec820b41b54430b50e96b5c/uploads/bfi_thumb/2018072858-rssv6jvuu9o4mv41lakht786qlzc8tdocu0hqpuemi.jpg",
+
+        "https://cdn.s3waas.gov.in/s3a1d33d0dfec820b41b54430b50e96b5c/uploads/bfi_thumb/2018072817-rssv6daziff4dldlnpq3tqvykwvrqxnjzxg3ds45u2.jpg",
+
+        "https://cdn.s3waas.gov.in/s3a1d33d0dfec820b41b54430b50e96b5c/uploads/bfi_thumb/2018072869-rssv6lrj7xqpa31babdqy6r3xdq2o7l513bgp9rma2.jpg"
+
+    ]
+
+},
+
+
+ladkhan: {
+
+    title:
+    "Ladh Khan Temple - Aihole",
+
+    image:
+    "https://cdn.s3waas.gov.in/s3a1d33d0dfec820b41b54430b50e96b5c/uploads/bfi_thumb/2018072869-rssv6lrj7xqpa31babdqy6r3xdq2o7l513bgp9rma2.jpg",
+
+    location:
+    "Ladh Khan Temple, Aihole, Karnataka",
+
+    map:
+    "Ladh Khan Temple Aihole Karnataka",
+
+    history:
+    "The Ladh Khan Temple is an important example of the experimental nature of early Chalukyan temple building. The official district page describes its panchayat-hall style and later addition of the sanctum.",
+
+    info:
+    "The shrine contains a Shivalinga and Nandi. The temple is located south of the Durga Temple.",
+
+    photos:[
+
+        "https://cdn.s3waas.gov.in/s3a1d33d0dfec820b41b54430b50e96b5c/uploads/bfi_thumb/2018072869-rssv6lrj7xqpa31babdqy6r3xdq2o7l513bgp9rma2.jpg",
+
+        "https://cdn.s3waas.gov.in/s3a1d33d0dfec820b41b54430b50e96b5c/uploads/bfi_thumb/20180728100-rssv6cd5bldu1zeyt7bh994hzj0ej8jtnsslwi5k0a.jpg",
+
+        "https://cdn.s3waas.gov.in/s3a1d33d0dfec820b41b54430b50e96b5c/uploads/bfi_thumb/2018072858-rssv6jvuu9o4mv41lakht786qlzc8tdocu0hqpuemi.jpg",
+
+        "https://cdn.s3waas.gov.in/s3a1d33d0dfec820b41b54430b50e96b5c/uploads/bfi_thumb/2018072817-rssv6daziff4dldlnpq3tqvykwvrqxnjzxg3ds45u2.jpg"
+
+    ]
+
+},
+
+
+meguti: {
+
+    title:
+    "Meguti Temple - Aihole",
+
+    image:
+    "https://cdn.s3waas.gov.in/s3a1d33d0dfec820b41b54430b50e96b5c/uploads/bfi_thumb/2018072869-rssv6lrj7xqpa31babdqy6r3xdq2o7l513bgp9rma2.jpg",
+
+    location:
+    "Meguti Temple, Aihole, Bagalkote District, Karnataka",
+
+    map:
+    "Meguti Temple Aihole Karnataka",
+
+    history:
+    "The Meguti Temple was built on a small hill in 634 AD and is the only dated monument at Aihole according to the official district page. Its inscription records its construction by Ravikeerti, commander and minister of Pulakesin II.",
+
+    info:
+    "The monument provides evidence for the early development of Dravidian architecture and is associated with Jain religious tradition.",
+
+    photos:[
+
+        "https://cdn.s3waas.gov.in/s3a1d33d0dfec820b41b54430b50e96b5c/uploads/bfi_thumb/2018072869-rssv6lrj7xqpa31babdqy6r3xdq2o7l513bgp9rma2.jpg",
+
+        "https://cdn.s3waas.gov.in/s3a1d33d0dfec820b41b54430b50e96b5c/uploads/bfi_thumb/2018072858-rssv6jvuu9o4mv41lakht786qlzc8tdocu0hqpuemi.jpg",
+
+        "https://cdn.s3waas.gov.in/s3a1d33d0dfec820b41b54430b50e96b5c/uploads/bfi_thumb/20180728100-rssv6cd5bldu1zeyt7bh994hzj0ej8jtnsslwi5k0a.jpg",
+
+        "https://cdn.s3waas.gov.in/s3a1d33d0dfec820b41b54430b50e96b5c/uploads/bfi_thumb/2018072817-rssv6daziff4dldlnpq3tqvykwvrqxnjzxg3ds45u2.jpg"
+
+    ]
+
+},
+
+
+ravanaphadi: {
+
+    title:
+    "Ravanaphadi Cave - Aihole",
+
+    image:
+    "https://cdn.s3waas.gov.in/s3a1d33d0dfec820b41b54430b50e96b5c/uploads/bfi_thumb/2018072817-rssv6daziff4dldlnpq3tqvykwvrqxnjzxg3ds45u2.jpg",
+
+    location:
+    "Ravanaphadi Cave, Aihole, Karnataka",
+
+    map:
+    "Ravanaphadi Cave Aihole Karnataka",
+
+    history:
+    "Ravanaphadi is a rock-cut temple assigned to the 6th century. The official district page describes a larger sanctum and carved panels around the entrance.",
+
+    info:
+    "Important sculptures include Mahishasuramardhini, Dancing Shiva, Ganesha and the Sapta-Matrikas.",
+
+    photos:[
+
+        "https://cdn.s3waas.gov.in/s3a1d33d0dfec820b41b54430b50e96b5c/uploads/bfi_thumb/2018072817-rssv6daziff4dldlnpq3tqvykwvrqxnjzxg3ds45u2.jpg",
+
+        "https://cdn.s3waas.gov.in/s3a1d33d0dfec820b41b54430b50e96b5c/uploads/bfi_thumb/20180728100-rssv6cd5bldu1zeyt7bh994hzj0ej8jtnsslwi5k0a.jpg",
+
+        "https://cdn.s3waas.gov.in/s3a1d33d0dfec820b41b54430b50e96b5c/uploads/bfi_thumb/2018072858-rssv6jvuu9o4mv41lakht786qlzc8tdocu0hqpuemi.jpg",
+
+        "https://cdn.s3waas.gov.in/s3a1d33d0dfec820b41b54430b50e96b5c/uploads/bfi_thumb/2018072869-rssv6lrj7xqpa31babdqy6r3xdq2o7l513bgp9rma2.jpg"
+
+    ]
+
+},
+
+
+
+/* ================= KUDALA SANGAMA ================= */
+
+riverView: {
+
+    title:
+    "Kudalasangama River View",
+
+    image:
+    "https://cdn.s3waas.gov.in/s3a1d33d0dfec820b41b54430b50e96b5c/uploads/bfi_thumb/2018080336-rssv6v5x4a3ki6nnrfg0n4dpv8fqt6mgedubi1doju.jpg",
+
+    location:
+    "Kudalasangama, Bagalkote District, Karnataka",
+
+    map:
+    "Kudala Sangama Karnataka",
+
+    history:
+    "Kudalasangama is an important pilgrimage centre. The official district page states that the Krishna and Malaprabha rivers merge here and that the place is about 15 km from Almatti Dam and 45 km from Bagalkot.",
+
+    info:
+    "The river landscape is one of the important visual features of Kudalasangama. The official photo gallery includes a river-view photograph.",
+
+    photos:[
+
+        "https://cdn.s3waas.gov.in/s3a1d33d0dfec820b41b54430b50e96b5c/uploads/bfi_thumb/2018080336-rssv6v5x4a3ki6nnrfg0n4dpv8fqt6mgedubi1doju.jpg",
+
+        "https://cdn.s3waas.gov.in/s3a1d33d0dfec820b41b54430b50e96b5c/uploads/bfi_thumb/2018080351-rssv6v5x4a3ki6nnrfg0n4dpv8fqt6mgedubi1doju.jpg",
+
+        "https://cdn.s3waas.gov.in/s3a1d33d0dfec820b41b54430b50e96b5c/uploads/bfi_thumb/2018080366-rssv6w3rb44utsmalxun7m56gmb40vq6qihszbcadm.jpg",
+
+        "https://cdn.s3waas.gov.in/s3a1d33d0dfec820b41b54430b50e96b5c/uploads/bfi_thumb/2018080325-rssv6v5x4a3ki6nnrfg0n4dpv8fqt6mgedubi1doju.jpg"
+
+    ]
+
+},
+
+
+sangamaTemple: {
+
+    title:
+    "Kudalasangama Temple",
+
+    image:
+    "https://cdn.s3waas.gov.in/s3a1d33d0dfec820b41b54430b50e96b5c/uploads/bfi_thumb/2018080351-rssv6v5x4a3ki6nnrfg0n4dpv8fqt6mgedubi1doju.jpg",
+
+    location:
+    "Kudalasangama Temple, Bagalkote District, Karnataka",
+
+    map:
+    "Kudalasangama Temple Karnataka",
+
+    history:
+    "Kudalasangama is an important pilgrimage centre associated with Basavanna. The official district page identifies the Aikya Mantapa or holy Samadhi of Basavanna and the sacred Linga at the site.",
+
+    info:
+    "The temple complex is part of the historic pilgrimage centre maintained and developed by the Kudala Sangama Development Board.",
+
+    photos:[
+
+        "https://cdn.s3waas.gov.in/s3a1d33d0dfec820b41b54430b50e96b5c/uploads/bfi_thumb/2018080351-rssv6v5x4a3ki6nnrfg0n4dpv8fqt6mgedubi1doju.jpg",
+
+        "https://cdn.s3waas.gov.in/s3a1d33d0dfec820b41b54430b50e96b5c/uploads/bfi_thumb/2018080336-rssv6v5x4a3ki6nnrfg0n4dpv8fqt6mgedubi1doju.jpg",
+
+        "https://cdn.s3waas.gov.in/s3a1d33d0dfec820b41b54430b50e96b5c/uploads/bfi_thumb/2018080366-rssv6w3rb44utsmalxun7m56gmb40vq6qihszbcadm.jpg",
+
+        "https://cdn.s3waas.gov.in/s3a1d33d0dfec820b41b54430b50e96b5c/uploads/bfi_thumb/2018080325-rssv6v5x4a3ki6nnrfg0n4dpv8fqt6mgedubi1doju.jpg"
+
+    ]
+
+},
+
+
+aikya: {
+
+    title:
+    "Basavanna Aikya Linga",
+
+    image:
+    "https://cdn.s3waas.gov.in/s3a1d33d0dfec820b41b54430b50e96b5c/uploads/bfi_thumb/2018080366-rssv6w3rb44utsmalxun7m56gmb40vq6qihszbcadm.jpg",
+
+    location:
+    "Aikya Mantapa, Kudalasangama, Karnataka",
+
+    map:
+    "Basavanna Aikya Mantapa Kudalasangama Karnataka",
+
+    history:
+    "The official Kudalasangama page identifies the Aikya Mantapa as the holy Samadhi of Basavanna. It also describes the Linga at the site as believed to be self-born (Swayambhu).",
+
+    info:
+    "The Aikya Mantapa is one of the central spiritual and cultural attractions of Kudalasangama.",
+
+    photos:[
+
+        "https://cdn.s3waas.gov.in/s3a1d33d0dfec820b41b54430b50e96b5c/uploads/bfi_thumb/2018080366-rssv6w3rb44utsmalxun7m56gmb40vq6qihszbcadm.jpg",
+
+        "https://cdn.s3waas.gov.in/s3a1d33d0dfec820b41b54430b50e96b5c/uploads/bfi_thumb/2018080351-rssv6v5x4a3ki6nnrfg0n4dpv8fqt6mgedubi1doju.jpg",
+
+        "https://cdn.s3waas.gov.in/s3a1d33d0dfec820b41b54430b50e96b5c/uploads/bfi_thumb/2018080336-rssv6v5x4a3ki6nnrfg0n4dpv8fqt6mgedubi1doju.jpg",
+
+        "https://cdn.s3waas.gov.in/s3a1d33d0dfec820b41b54430b50e96b5c/uploads/bfi_thumb/2018080325-rssv6v5x4a3ki6nnrfg0n4dpv8fqt6mgedubi1doju.jpg"
+
+    ]
+
+},
+
+
+auditorium: {
+
+    title:
+    "Kudalasangama Auditorium",
+
+    image:
+    "https://cdn.s3waas.gov.in/s3a1d33d0dfec820b41b54430b50e96b5c/uploads/bfi_thumb/2018080325-rssv6v5x4a3ki6nnrfg0n4dpv8fqt6mgedubi1doju.jpg",
+
+    location:
+    "Kudalasangama, Bagalkote District, Karnataka",
+
+    map:
+    "Kudalasangama Auditorium Karnataka",
+
+    history:
+    "The official Kudalasangama gallery includes photographs of the auditorium hall and its outlook as part of the development of the pilgrimage centre.",
+
+    info:
+    "The auditorium is part of the developed facilities at the Kudalasangama pilgrimage centre.",
+
+    photos:[
+
+        "https://cdn.s3waas.gov.in/s3a1d33d0dfec820b41b54430b50e96b5c/uploads/bfi_thumb/2018080325-rssv6v5x4a3ki6nnrfg0n4dpv8fqt6mgedubi1doju.jpg",
+
+        "https://cdn.s3waas.gov.in/s3a1d33d0dfec820b41b54430b50e96b5c/uploads/bfi_thumb/2018080336-rssv6v5x4a3ki6nnrfg0n4dpv8fqt6mgedubi1doju.jpg",
+
+        "https://cdn.s3waas.gov.in/s3a1d33d0dfec820b41b54430b50e96b5c/uploads/bfi_thumb/2018080351-rssv6v5x4a3ki6nnrfg0n4dpv8fqt6mgedubi1doju.jpg",
+
+        "https://cdn.s3waas.gov.in/s3a1d33d0dfec820b41b54430b50e96b5c/uploads/bfi_thumb/2018080366-rssv6w3rb44utsmalxun7m56gmb40vq6qihszbcadm.jpg"
+
+    ]
+
+}
+
+};
+
+
+
+/* =====================================================
+   SHOW DETAILS
+===================================================== */
+
+function showDetails(id){
+
+    const data = touristData[id];
+
+    if(!data){
+
+        return;
+
+    }
+
+
+    document.getElementById("detailTitle")
+    .innerText = data.title;
+
+
+    document.getElementById("detailImage")
+    .src = data.image;
+
+
+    document.getElementById("detailHistory")
+    .innerText = data.history;
+
+
+    document.getElementById("detailLocation")
+    .innerText = data.location;
+
+
+    document.getElementById("detailInfo")
+    .innerText = data.info;
+
+
+    /* GOOGLE MAP */
+
+    const mapQuery =
+    encodeURIComponent(data.map);
+
+
+    document.getElementById("detailMap")
+    .src =
+    "https://www.google.com/maps?q="
+    + mapQuery
+    + "&output=embed";
+
+
+    document.getElementById("mapButton")
+    .href =
+    "https://www.google.com/maps/search/?api=1&query="
+    + mapQuery;
+
+
+    /* GALLERY */
+
+    const gallery =
+    document.getElementById("detailGallery");
+
+
+    gallery.innerHTML = "";
+
+
+    data.photos.forEach(function(photo){
+
+        const img =
+        document.createElement("img");
+
+
+        img.src = photo;
+
+
+        img.alt = data.title;
+
+
+        gallery.appendChild(img);
+
+    });
+
+
+    /* SHOW MODAL */
+
+    document.getElementById("detailsModal")
+    .style.display = "block";
+
+
+    document.body.style.overflow = "hidden";
+
+}
+
+
+
+/* =====================================================
+   CLOSE DETAILS
+===================================================== */
+
+function closeDetails(){
+
+    document.getElementById("detailsModal")
+    .style.display = "none";
+
+
+    document.body.style.overflow = "auto";
+
+}
+
+
+
+/* CLOSE OUTSIDE */
+
+window.onclick = function(event){
+
+    const modal =
+    document.getElementById("detailsModal");
+
+
+    if(event.target === modal){
+
+        closeDetails();
+
+    }
+
+};
+
+
+
+/* =====================================================
+   AI BACKEND
+===================================================== */
+
+async function askAI(){
+
+    const question =
+    document.getElementById("question")
+    .value
+    .trim();
+
+
+    const answer =
+    document.getElementById("answer");
+
+
+    if(!question){
+
+        answer.innerText =
+        "Please enter your question.";
+
+        return;
+
+    }
+
+
+    answer.innerText =
+    "🤖 AI is thinking...";
+
+
+    try{
+
+        const response =
+        await fetch(
+
+            `http://${window.location.hostname}:3000/ask`,
+
+            {
+
+                method:"POST",
+
+                headers:{
+                    "Content-Type":
+                    "application/json"
+                },
+
+                body:JSON.stringify({
+
+                    question:question
+
+                })
+
+            }
+
+        );
+
+
+        const data =
+        await response.json();
+
+
+        answer.innerText =
+        data.answer ||
+        "No answer received.";
+
+    }
+
+
+    catch(error){
+
+        answer.innerText =
+        "Backend connection failed. Start your Node.js server.";
+
+    }
+
+}
+
+</script>
+
+
+</body>
+
+</html>
